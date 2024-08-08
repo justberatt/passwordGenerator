@@ -64,29 +64,34 @@ input[type="number"] {
     margin-top: 1em;
 }
 
-.input-container {
-
-}
 hr {
     opacity: 10%;
     width: 100%;
     margin: 2em 0;
 }
 
+.input-container {
+    font-family: "Karla", sans-serif;
+}
+
 #password-field {
     display: flex;
     gap: 24px;
+    
+    font-family: "Karla", sans-serif;
 }
 
 #password-field__one,
 #password-field__two {
-    background-color: #273549;
-    flex-grow: 1;
-    height: 39px;
-    border-radius: 6px;
-    color: #4adf86;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
+    
+    height: 39px;
+    border-radius: 6px;
+    
+    background-color: #273549;
+    color: #4adf86;
     cursor: pointer;
 }
