@@ -19,6 +19,23 @@ function renderPasswords() {
     passwordFieldOne.textContent = generateRandomPassword();
     passwordFieldTwo.textContent = generateRandomPassword();
 }
-let generatePasswordButton = document.querySelector("#generate-passwords");
 
+let generatedPasswordFieldOne = document.querySelector("#password-field__one");
+let generatedPasswordFieldTwo = document.querySelector("#password-field__two");
+
+function copyToClipboard(e) {
+    let passwordText = e.target.textContent;
+    navigator.clipboard.writeText(passwordText)
+                .then(() => {
+                    alert('Password copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Failed to copy password: ', err);
+                });
+}
+
+let generatePasswordButton = document.querySelector("#generate-passwords");
 generatePasswordButton.addEventListener('click', renderPasswords);
+
+generatedPasswordFieldOne.addEventListener('click', copyToClipboard);
+generatedPasswordFieldTwo.addEventListener('click', copyToClipboard);
