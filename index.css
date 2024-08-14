@@ -57,7 +57,7 @@ span {
 
 input[type="number"] {
     width: 100%;
-    height: 42px;
+    height: 38px;
     align-self: flex-end;
     border: none;
     border-radius: 6px;
@@ -72,6 +72,7 @@ hr {
 
 .input-container {
     font-family: "Karla", sans-serif;
+    position: relative;
 }
 
 #password-field {
@@ -94,4 +95,19 @@ hr {
     background-color: #273549;
     color: #4adf86;
     cursor: pointer;
+}
+
+.alert-text {
+    font-size: 14px;
+    color: red;
+    position: absolute;
+    top:65;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
 }

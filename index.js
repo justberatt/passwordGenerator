@@ -1,16 +1,23 @@
 const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
 
-let inputField = document.querySelector(".input-field");
-
 function generateRandomPassword() {
-    const length = parseInt(document.querySelector("#passwordLength").value);
-    let password = "";
-    for (let i=0; i<length; i++) {
-        let charArrIndex = Math.floor(Math.random() * characters.length)
-        password += characters[charArrIndex];
+    const inputField = document.querySelector("#passwordLength");
+    const alertText = document.querySelector(".alert-text");
+
+    if (inputField.value<8 || inputField.value > 20) {
+        alertText.classList.remove("hidden");
+        alertText.classList.add("visible");
+    } else {
+        alertText.classList.add("hidden");
+        alertText.classList.remove("visible");
+        let password = "";
+        for (let i=0; i<inputField.value; i++) {
+            let charArrIndex = Math.floor(Math.random() * characters.length)
+            password += characters[charArrIndex];
+        }
+        return password;
     }
-    return password;
 }
 
 function renderPasswords() {
